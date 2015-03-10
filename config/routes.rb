@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
   root 'static_pages#home'
+  
   resources :users
+  
+  resources :events, only: [:create,:new,:show, :index]
   
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'

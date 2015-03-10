@@ -1,0 +1,13 @@
+<h1>All Events</h1>
+
+<% Event.all.each do |event| %>
+    <h4>
+        <%= event.date.strftime("%B %d, %Y") %>
+    </h4>
+    <p>
+        <%= event.description %>
+    </p>
+    <p>
+        Created by <%= event.creator.name %>
+    </p>
+<% end %>
