@@ -3,3 +3,10 @@
 <p><%= @event.description %></p>
 
 <p>Hosted by <%= @event.creator.name %></p>
+
+<h3>Attending</h3>
+<ul>
+    <% @event.attendees.each do |attendee| %>
+      <li><%= attendee.name %></li>
+    <% end %>
+</ul>

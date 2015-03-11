@@ -1,13 +1,31 @@
-<h1>All Events</h1>
+<h1>Upcoming Events</h1>
 
-<% Event.all.each do |event| %>
+<% @upcoming_events.each do |event| %>
     <h4>
-        <%= event.date.strftime("%B %d, %Y") %>
+        <%= link_to event.date.strftime("%B %d, %Y").to_s, event %>
     </h4>
-    <p>
-        <%= event.description %>
-    </p>
-    <p>
-        Created by <%= event.creator.name %>
-    </p>
+    <ul>
+        <li>
+            <%= event.description %>
+        </li>
+        <li>
+            Created by <%= event.creator.name %>
+        </li>
+    </ul>
+<% end %>
+
+<h1>Past Events</h1>
+
+<% @prev_events.each do |event| %>
+    <h4>
+        <%= link_to event.date.strftime("%B %d, %Y").to_s, event %>
+    </h4>
+    <ul>
+        <li>
+            <%= event.description %>
+        </li>
+        <li>
+            Created by <%= event.creator.name %>
+        </li>
+    </ul>
 <% end %>
